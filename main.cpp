@@ -10,6 +10,7 @@ public:
     string name;
     string phone;
 };
+
 order add_order(int food_prices[][3], char food_names[][10])
 {
     order client_order;
@@ -86,9 +87,9 @@ int main(void)
 
     bool run = true;
     int i = 0;
+    order orders[40];
     while (run)
     {
-        order orders[10];
         int choice;
         cout << "add order -> 1\nedit order -> 2\nexit -> 3\nall orders by date -> 4\nall orders by type -> 5\ndelete order -> 6";
         cin >> choice;
@@ -100,7 +101,7 @@ int main(void)
         }
         else if (choice == 2)
         {
-                }
+        }
         else if (choice == 3)
         {
             run = false;
@@ -116,5 +117,6 @@ int main(void)
         {
         }
     }
+    handle_file(orders);
     return 0;
 }
